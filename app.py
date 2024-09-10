@@ -1,4 +1,4 @@
-from flask import Flask, request, jsonify
+from flask import Flask, request, jsonify, render_template
 import pickle
 import numpy as np
 from sklearn.metrics.pairwise import cosine_similarity
@@ -64,6 +64,11 @@ def find_similar():
     max_similarity = convert_to_native_types(max_similarity)
 
     return jsonify({'similar_image': most_similar_image_path, 'similarity': max_similarity})
+
+# Route for the home page
+@app.route('/')
+def home():
+    return 'Trang chủ'
 
 if __name__ == '__main__':
     app.run(debug=True)
