@@ -4,6 +4,9 @@ import numpy as np
 from sklearn.metrics.pairwise import cosine_similarity
 from keras.preprocessing import image
 from tensorflow.keras.applications.resnet50 import preprocess_input, ResNet50
+import os
+
+port = int(os.environ.get('PORT', 5000))  # 5000 là cổng mặc định nếu không có biến môi trường PORT
 
 app = Flask(__name__)
 
@@ -71,4 +74,4 @@ def home():
     return 'Trang chủ'
 
 if __name__ == '__main__':
-    app.run(debug=True)
+    app.run(debug=True, port=port)  # Specify the port here
