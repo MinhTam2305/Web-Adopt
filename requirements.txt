@@ -4,5 +4,5 @@ numpy
 scikit-learn 
 pillow 
 keras
-gunicorn
+gunicorn 
 rembg
